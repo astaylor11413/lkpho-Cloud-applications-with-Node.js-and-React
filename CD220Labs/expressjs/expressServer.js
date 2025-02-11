@@ -28,7 +28,21 @@ app.get("/:name", (req, res) => {
     res.send("Hello " + req.params.name);
 });
 
+let months = ["January","February", "March", "April", 
+                "May", "June", "July", "August","September",
+                "October", "November","December"];
+app.get('/fetchMonth/:num',(req,res)=>{
+    const chosenNum = parseInt(req.params.num);
+    if(chosenNum>0 && chosenNum<=12){
+        let chosenMonth = months[chosenNum-1];
+        res.send("The month that was chosen is: "+chosenMonth);
+    }else{
+        res.send("Invalid input-not a valid number. Try again.");
+    }
+});
+
 // Start the server and listen on port 3333
-app.listen(3333, () => {
+app.listen(3334, () => {
     console.log(`Listening at http://localhost:3333`);
 });
+

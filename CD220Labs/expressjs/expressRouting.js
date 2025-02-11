@@ -35,6 +35,6 @@ app.use('/user', userRouter);
 app.use('/item', itemRouter);
 
 // Start the server and listen on port 3333
-app.listen(3333, () => {
-    console.log(`Listening at http://localhost:3333`);
+app.listen(3334, () => {
+    console.log(`Listening at http://localhost:3334`);
 });
